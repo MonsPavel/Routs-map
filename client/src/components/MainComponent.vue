@@ -174,6 +174,7 @@ export default {
       rout.agent_id = this.selected_agent;
       rout.day_of_week = this.selected_day;
       rout.visit_date = this.visit_date;
+      if(rout.visit_date) rout.day_of_week = '';
       MainDataService.updateRouts(rout.id, rout)
       .then(()=>{
                   this.$modal.hide('points');
@@ -186,8 +187,8 @@ export default {
                     newRout.agent_id = this.selected_agent;
                     newRout.day_of_week = this.selected_day;
                     newRout.visit_date = this.visit_date;
-                    if(newRout.visit_date) newRout.trade_point_id = null;
-                    if(newRout.trade_point_id && newRout.agent_id && (newRout.day_of_week || newRout.visit_date)) {
+                    if(newRout.visit_date) newRout.day_of_week = '';
+                    if(newRout.agent_id && (newRout.day_of_week || newRout.visit_date)) {
                       MainDataService.createRout(newRout).then(() => {
                         this.$modal.hide('points');
                         this.refreshRoutes();
