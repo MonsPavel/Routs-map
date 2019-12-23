@@ -194,7 +194,11 @@ export default {
                         this.refreshRoutes();
                       })
                     } else {
-                      alert('Заполены не все поля');
+                      this.$swal({
+                    text: "Заполнены не все поля",
+                    type: 'warning',
+                    showCancelButton: false
+                      })
                     }
                 
     },
