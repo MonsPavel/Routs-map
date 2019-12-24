@@ -178,7 +178,9 @@ export default {
       MainDataService.updateRouts(rout.id, rout)
       .then(()=>{
                   this.$modal.hide('points');
-                  this.refreshRoutes();
+                  let updatedRoutIndex = this.routs.findIndex(updatedRout => updatedRout.id === rout.id);
+                  this.routs[updatedRoutIndex] = rout;
+                  //this.refreshRoutes();
                 })
     },
     addRoutesClicked() {
@@ -191,6 +193,7 @@ export default {
                     if(newRout.agent_id && (newRout.day_of_week || newRout.visit_date)) {
                       MainDataService.createRout(newRout).then(() => {
                         this.$modal.hide('points');
+                        //this.routs.push(newRout);
                         this.refreshRoutes();
                       })
                     } else {
@@ -220,7 +223,8 @@ export default {
                                         'Your file has been deleted.',
                                         'success'
                                         )
-                                    this.refreshRoutes();
+                                        this.routs =  this.routs.filter(x => x.id != id)
+                                    //this.refreshRoutes();
                                 }).catch(()=> {
                                     this.$swal("Failed!", "There was something wronge.", "warning");
                                 });
