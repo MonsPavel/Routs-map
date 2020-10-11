@@ -1,20 +1,24 @@
 <template>
-  <div id="app">
-    <MainComponent></MainComponent>
-  </div>
+    <v-app>
+        <v-main>
+            <Navigation></Navigation>
+            <router-view></router-view>
+        </v-main>
+    </v-app>
 </template>
 
 <script>
-import MainComponent from './components/MainComponent.vue'
+    import Navigation from './components/Navigation'
 
-export default {
-  name: 'app',
-  components: {
-    MainComponent
-  }
-}
+    export default {
+        name: 'App',
+
+        components: {
+            Navigation
+        },
+
+        data: () => ({
+            //
+        }),
+    };
 </script>
-
-<style>
-@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css)
-</style>
