@@ -13,12 +13,14 @@ const getters = {
 const actions = {
     async [FETCH_TRADE_POINTS] ({ commit, state }) {
         const { data } = await MainDataService.retrieveAllPoints()
+        console.log(data)
         commit(SET_TRADE_POINTS, data)
     }
 }
 
 const mutations = {
     [SET_TRADE_POINTS](state, tradePoints) {
+        console.log(tradePoints)
         state.tradePoints = tradePoints
     },
 }

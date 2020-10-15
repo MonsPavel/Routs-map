@@ -20,7 +20,7 @@ retrieveAllPoints() {
   }
 
 deleteRouts(id) {
-    return axios.delete(`${ROUT_API_URL}?route_id=${id}`);
+        return axios.delete(`${ROUT_API_URL}?route_id=${id}`);
     }
 updateRouts(id, rout) {
         return axios.put(`${ROUT_API_URL}`, rout);
