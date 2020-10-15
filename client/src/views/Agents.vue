@@ -15,7 +15,7 @@
 
         methods: mapActions([FETCH_AGENTS]),
 
-        mounted: async function () {
+        async mounted() {
             this[FETCH_AGENTS]()
         }
     }

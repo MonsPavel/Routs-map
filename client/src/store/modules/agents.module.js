@@ -1,4 +1,4 @@
-import { SET_AGENTS } from '../types/mutations.type'
+import {SET_AGENTS, SET_TRADE_POINTS} from '../types/mutations.type'
 import { FETCH_AGENTS } from '../types/actions.type'
 import MainDataService from '../../services/main.service'
 
@@ -13,13 +13,13 @@ const getters = {
 const actions = {
     async [FETCH_AGENTS] ({ commit, state }) {
         const { data } = await MainDataService.retrieveAllAgents()
-        commit(SET_AGENTS)
+        commit(SET_AGENTS, data)
     }
 }
 
 const mutations = {
     [SET_AGENTS](state, article) {
-        state.article = article;
+        state.article = article
     },
 }
 
