@@ -18,8 +18,8 @@ const actions = {
 }
 
 const mutations = {
-    [SET_AGENTS](state, article) {
-        state.article = article
+    [SET_AGENTS](state, agents) {
+        state.agents = agents
     },
 }
 

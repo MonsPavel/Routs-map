@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Agents from '../views/Agents'
 import TradePoints from '../views/TradePoints'
+import Routes from '../views/Routes'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
         path: '/trade-points',
         name: 'TradePoints',
         component: TradePoints
+    },
+    {
+        path: '/routes',
+        name: 'Routes',
+        component: Routes
     },
 ]
 
